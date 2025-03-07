@@ -13,7 +13,7 @@ triangle(A, B, C)
  */
 
 triangle(A, B, C, R):- comprobaciontriangulo(A, B, C), triangle2(A, B, C ,R).
-// Es un triangulo si se cumplen las 3 condiciones
+/* Es un triangulo si se cumplen las 3 condiciones */
 comprobaciontriangulo(A, B, C):- L1 is A + B, L1 >= C, L2 is B + C, L2 >= A, L3 is A + C, L3 >= B, A > 0, B > 0, C > 0.
 
 
