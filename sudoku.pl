@@ -5,7 +5,7 @@ es cierto si Matrix unifica con una matriz 9x9 casilllas, dividido en 9 bloques,
 
 */
 
-:- use_module(library(clpz)).
+:- use_module(library(clpfd)).
 
 sudoku(Rows) :-
         length(Rows, 9),
