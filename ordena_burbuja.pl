@@ -15,6 +15,10 @@ Principio de Inducción
 
 */
 
+burbuja(Lista, ) :- append(L1, [E1,E2|L2], Lista), E1 > E2, append(L1, [E2,E1,|L2, Lista2), burbuja(ListaR, R).
+
 ordenada([]).
 ordenada([_]).
 ordenada([Cab1, Cab2|Resto]) :- Cab1 < Cab2, ordenada([Cab2|Resto]).
+
+
