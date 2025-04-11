@@ -1,0 +1,12 @@
+/*
+rna_transcription(Dna, Rna).
+unifica si RNA es la transcripcion de DNA
+*/
+
+rna_aux("G","C").
+rna_aux("C","G").
+rna_aux("T","A").
+rna_aux("A","U").
+rna_transcription(X, R) :- rna_aux(X,R).
+
+rna_transciption([Cab|Resto], Res) :- rna_aux(Cab, X), string_concat(X, _, Res), rna_transcription(Resto, Res).
