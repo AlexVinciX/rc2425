@@ -12,3 +12,47 @@ rna_transcription(X, R) :- rna_aux(X,R).
 
 rna_transcription([],[]).
 rna_transciption([Cab|Resto], [X|Res]) :- rna_aux(Cab, X), rna_transcription(Resto, Res).
+Perfecto, si quieres que la transcripción trabaje directamente con cadenas (strings) como "GCTA" y te devuelva "CGAU", entonces necesitas:
+
+1. Convertir la cadena de entrada en una lista de caracteres.
+
+
+2. Aplicar la transcripción elemento a elemento.
+
+
+3. Convertir la lista resultante de nuevo a una cadena.
+
+
+
+Aquí está el código modificado para hacerlo:
+
+% Reglas de transcripción base
+rna_aux('G', 'C').
+rna_aux('C', 'G').
+rna_aux('T', 'A').
+rna_aux('A', 'U').
+
+% Caso base: cadena vacía
+rna_transcription("", "").
+
+% Transcripción general
+rna_transcription(Dna, Rna) :-
+    string_chars(Dna, DnaList),        % Convertir cadena a lista de caracteres
+    transcribe_list(DnaList, RnaList), % Transcribir elemento por elemento
+    string_chars(Rna, RnaList).        % Convertir lista resultante a cadena
+
+% Transcripción de lista (caso base)
+transcribe_list([], []).
+
+% Transcripción de lista (caso recursivo)
+transcribe_list([Cab|Resto], [X|Res]) :-
+    rna_aux(Cab, X),
+    transcribe_list(Resto, Res).
+
+Ejemplo de uso:
+
+?- rna_transcription("GCTA", R).
+R = "CGAU".
+
+¿Te gustaría que también maneje errores si hay letras inválidas (como 'B', 'X', etc.)?
+
