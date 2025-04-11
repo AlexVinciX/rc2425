@@ -9,4 +9,6 @@ rna_aux("T","A").
 rna_aux("A","U").
 rna_transcription(X, R) :- rna_aux(X,R).
 
-rna_transciption([Cab|Resto], Res) :- rna_aux(Cab, X), string_concat(X, _, Res), rna_transcription(Resto, Res).
+
+rna_transcription([],[]).
+rna_transciption([Cab|Resto], [X|Res]) :- rna_aux(Cab, X), rna_transcription(Resto, Res).
