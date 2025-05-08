@@ -23,6 +23,9 @@ balanceado(Arbol)
 
 */
 
+balanceado(nil).
+balanceado(a(_,Izq, Der)) :- altura(Izq,AltIzq), altura(Der,AltDer), abs(AltIzq-AltDer) =< 1, balanceado(Izq), balanceado(Der).
+
 
 /*
 altura(ArbolBinario, Alt)
@@ -31,5 +34,4 @@ altura(ArbolBinario, Alt)
 */
 
 altura(nil, 0).
-altura(a(1), 1).
-altura([Cab|Resto], R2) :- R2 is R + 1, altura(Resto, R).
+altura(a(_, Izq, Der), Alt) :- altura(Izq, AltIzq), altura(Der, AltDer), Alt is max(AltIzq, AltDer) + 1.
