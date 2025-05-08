@@ -1,4 +1,4 @@
-arbol1( a(1, a(2,nil,nil), a(3,nil,nil))
+arbol1( a(1, a(2,nil,nil), a(3,nil,nil)).
 arbol2( a(
 
 /*
