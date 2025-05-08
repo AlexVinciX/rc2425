@@ -32,4 +32,4 @@ altura(ArbolBinario, Alt)
 
 altura(nil, 0).
 altura(a(1), 1).
-altura([Cab|Resto, R2) :- R2 is R + 1, altura(Resto, R).
+altura([Cab|Resto], R2) :- R2 is R + 1, altura(Resto, R).
