@@ -7,7 +7,7 @@ crea_ab(Lista, ArbolBinario)
 */
 
 crea_ab([], nil).
-crea_ab([Cab|Resto], a(Cab,A1,A2) :-
+crea_ab([Cab|_], a(Cab,A1,A2)) :-
 length(Lista, L),
 Med is L div 2,
 length(L1, Med),
@@ -16,8 +16,7 @@ crea_ab(L1, A1),
 crea_ab(L2, A2).
 
 
-
-/*
+ /*
 balanceado(Arbol)
   es cierto si <<para todo nodo>> de Arbol la diferencia entre la altura del sub arbol izquierda y la altura del sub arbol derecho
 
