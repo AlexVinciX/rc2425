@@ -3,7 +3,7 @@
   anchura(ArbolGenerico, Lista)
     es cierto si Lista unifica con las etiquetas de ArbolGenerico ordenadas según el recorrido de anchura del arbol.
     
-    
+    De examen
 */
 
 anchura( a( Eti , ListaHijos), [ Eti | R ] ) :- anchura(ListaHijos, R). 
