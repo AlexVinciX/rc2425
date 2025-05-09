@@ -1,7 +1,8 @@
 /*
   bin2gen(ArbolBinario, ArbolGenerico)
    es cierto si ArbolGenerico unifica con un árbol genético equivalente a ArbolBinario
-  
+
+  De examen
 */
 
 bin2gen(a(Etiqueta, nil,nil), a(Etiqueta, [])).
