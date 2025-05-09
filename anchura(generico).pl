@@ -9,4 +9,4 @@
 anchura( a( Eti , ListaHijos), [ Eti | R ] ) :- anchura(ListaHijos, R). 
 
 anchura( [] , [] ).
-anchura( a( Eti , ListaHijos) | Resto ] , R2) :- append( Resto , ListaHijos, R), anchura( R , R2).  
+anchura( a( Eti , ListaHijos) | Resto , R2) :- append( Resto , ListaHijos, R), anchura( R , R2).  
