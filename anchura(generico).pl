@@ -6,7 +6,10 @@
     De examen
 */
 
-anchura( a( Eti , ListaHijos), [ Eti | R ] ) :- anchura(ListaHijos, R). 
+anchura(a(Et, ListaHijos), [Et|R]):-
+ anchura(ListaHijos, R).
 
-anchura( [] , [] ).
-anchura( a( Eti , ListaHijos) | Resto , R2) :- append( Resto , ListaHijos, R), anchura( R , R2).  
+anchura([], []).
+anchura([a(Et, ListaHijos)|Resto], [Et|R2]):-
+  append(Resto, ListaHijos, R),
+  anchura(R, R2).
