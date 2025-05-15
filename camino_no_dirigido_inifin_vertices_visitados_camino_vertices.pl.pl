@@ -30,6 +30,6 @@ Casos más sencillos
             camino(g(Vertices, Aristas), Ini, Fin, Visitados,  [Ini|Camino]) :- conectado(g(Vertices, Aristas), Ini , TMP), camino(g(Vertices, Aristas), TMP, Fin, [TMP|Visitados], Camino)
 
 
-            conectado(g(_m Aristas), Ini, Fin) :- member(a(Ini,Fin), Aristas).
+            conectado(g(_, Aristas), Ini, Fin) :- member(a(Ini,Fin), Aristas).
 
 */
