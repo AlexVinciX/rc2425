@@ -13,8 +13,9 @@
 
 /*   2   */
 
-Ei = estado(0,0).
-Ef = estado(_,4).
+/* Ei = estado(0,0).
+   Ef = estado(_,4).
+*/
 
 
 /*   3   */
@@ -32,12 +33,7 @@ mov(pasar_5a3, estado(L3,L5), estado(3, Res)) :-  Sum is L3 + L5, Sum > 3, Res i
 
 /*   4   */
 
-camino(Ei, Ei, Visitados, Camino).
+/*  camino(Ei, Ei, Visitados, Camino) .  */
 
-camino(Ei, Ef, _, []).
-camino(Ei, Ef, Visitados, [Mov|Camino]) :- mov(Mov, Ei, ETmp), \+ member(ETMP, Visitados), camino(ETmp, Ef, [ETMP|Visitados], Camino). 
-
-
-
-
-
+camino(Ei, Ei, _, []).
+camino(Ei, Ef, Visitados, [Mov|Camino]) :- mov(Mov, Ei, ETmp), \+ member(ETmp, Visitados), camino(ETmp, Ef, [ETmp|Visitados], Camino). 
